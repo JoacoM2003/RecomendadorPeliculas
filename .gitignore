@@ -1,0 +1,21 @@
+# Entornos virtuales
+/venv
+env/
+venv/
+.env
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Datos y modelos pesados (¡NO SUBIR A GITHUB!)
+/data/
+*.pkl
+*.faiss
+*.joblib
+*.csv
+*.zip
+
+# Jupyter Notebook
+.ipynb_checkpoints/
