@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine IA - Recomendador RAG</title>
+    <meta name="description" content="Encuentra tu próxima película favorita en segundos gracias a la Inteligencia Artificial y FAISS.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="bg-orb"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <main class="container">
+        <header>
+            <h1 class="gradient-text">Cine IA</h1>
+            <p>Descubre películas basadas en tus gustos exactos, actores, o décadas usando RAG y Gemini 2.0</p>
+        </header>
+
+        <section class="search-section glass-panel">
+            <form id="searchForm">
+                <div class="input-wrapper">
+                    <input type="text" id="promptInput" placeholder="Ej: Películas de ciencia ficción con Brad Pitt de los 90s..." required autocomplete="off">
+                    <button type="submit" id="searchBtn">
+                        <span class="btn-text">Descubrir</span>
+                        <div class="loader" id="btnLoader" style="display: none;"></div>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section id="resultSection" style="display: none;">
+            <div class="gemini-response glass-panel">
+                <div class="response-header">
+                    <img src="https://www.gstatic.com/lamda/images/sparkle_resting_v2_darkmode_2bdb7df2724e450073ede.gif" alt="AI Sparkle" class="sparkle-icon">
+                    <h3>Análisis del Agente</h3>
+                </div>
+                <div id="agentThinking" class="thinking" style="display: none;">Analizando la inmensa base de datos y sintonizando los embeddings...</div>
+                <p id="geminiReply"></p>
+            </div>
+
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Movies will be rendered here dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
